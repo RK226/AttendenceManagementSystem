@@ -1,0 +1,1024 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AttendenceManagementSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AcedemicYearMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AcedemicYear" Type="nvarchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BranchMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BranchName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="CollegeId" Type="int" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CollegeMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CollegeName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Taluka" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DistrictId" Type="bigint" Nullable="false" />
+    <Property Name="StateId" Type="int" Nullable="false" />
+    <Property Name="PinCode" Type="bigint" Nullable="false" />
+    <Property Name="ContactNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="University" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="EntryBy" Type="int" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="bigint" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="CollegeStartTime" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CollegeEndTime" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CountryId" Type="int" />
+  </EntityType>
+  <EntityType Name="CountryMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DeparmentMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CollegeId" Type="int" />
+    <Property Name="SectionId" Type="int" />
+    <Property Name="BranchId" Type="int" />
+    <Property Name="EntryBy" Type="int" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="int" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DistrictMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DistrictName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="StateId" Type="int" Nullable="false" />
+    <Property Name="CountryId" Type="int" Nullable="false" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DivisionMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DivisionName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="EntryBy" Type="bigint" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="bigint" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MonthMaster">
+    <Key>
+      <PropertyRef Name="MonthId" />
+    </Key>
+    <Property Name="MonthId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MonthName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PeriodMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="CollegeId" Type="int" Nullable="false" />
+    <Property Name="DepartmentId" Type="int" Nullable="false" />
+    <Property Name="SectionId" Type="int" Nullable="false" />
+    <Property Name="Period" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Session" Type="bit" />
+    <Property Name="Sessions" Type="nvarchar" MaxLength="50" />
+    <Property Name="TimeFrom" Type="nvarchar" MaxLength="50" />
+    <Property Name="TimeTo" Type="nvarchar" MaxLength="50" />
+    <Property Name="EntryBy" Type="int" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RoleMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="55" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SectionMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SectionName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="EntryBy" Type="int" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="int" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="StandardMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SectionId" Type="int" Nullable="false" />
+    <Property Name="BranchId" Type="int" Nullable="false" />
+    <Property Name="StandardName" Type="nvarchar(max)" />
+    <Property Name="EntryBy" Type="int" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="int" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="StateMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StateName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="CountryId" Type="int" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="URNNo" Type="bigint" />
+    <Property Name="RollNo" Type="bigint" />
+    <Property Name="CollegeId" Type="int" />
+    <Property Name="SectionId" Type="int" />
+    <Property Name="DepartmentId" Type="int" />
+    <Property Name="AcademicYearId" Type="int" />
+    <Property Name="Gender" Type="bit" />
+    <Property Name="AadharNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="100" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="100" />
+    <Property Name="MiddleName" Type="nvarchar" MaxLength="100" />
+    <Property Name="GrandFatherName" Type="nvarchar" MaxLength="100" />
+    <Property Name="MotherName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ContactNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="EmailId" Type="nvarchar" MaxLength="100" />
+    <Property Name="Religion" Type="nvarchar" MaxLength="250" />
+    <Property Name="Caste" Type="nvarchar" MaxLength="250" />
+    <Property Name="Nationality" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="Village" Type="nvarchar(max)" />
+    <Property Name="Taluka" Type="nvarchar" MaxLength="50" />
+    <Property Name="DistrictId" Type="int" />
+    <Property Name="StateId" Type="int" />
+    <Property Name="CountryId" Type="int" />
+    <Property Name="Pincode" Type="bigint" />
+    <Property Name="StandardId" Type="int" />
+    <Property Name="DivisionId" Type="int" />
+    <Property Name="YearId" Type="int" />
+    <Property Name="EntryBy" Type="int" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="int" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="Photo" Type="nvarchar(max)" />
+    <Property Name="Flag" Type="int" />
+    <Property Name="BranchId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StudentAttendence">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="CollegeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentID" Type="int" Nullable="false" />
+    <Property Name="SubjectId" Type="int" Nullable="false" />
+    <Property Name="StandardID" Type="int" Nullable="false" />
+    <Property Name="DivisionID" Type="int" Nullable="false" />
+    <Property Name="EntryBy" Type="int" />
+    <Property Name="EntryDate" Type="date" />
+    <Property Name="Flag" Type="bit" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="StudentAttendenceCount">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="AcademicYearId" Type="int" Nullable="false" />
+    <Property Name="DeparmentId" Type="int" Nullable="false" />
+    <Property Name="StudentId" Type="int" Nullable="false" />
+    <Property Name="SubjectId" Type="int" Nullable="false" />
+    <Property Name="CollegelId" Type="int" Nullable="false" />
+    <Property Name="June" Type="int" />
+    <Property Name="July" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="August" Type="int" />
+    <Property Name="September" Type="int" />
+    <Property Name="October" Type="int" />
+    <Property Name="November" Type="int" />
+    <Property Name="December" Type="int" />
+    <Property Name="January" Type="int" />
+    <Property Name="February" Type="int" />
+    <Property Name="March" Type="int" />
+    <Property Name="April" Type="int" />
+    <Property Name="May" Type="int" />
+    <Property Name="EntryBy" Type="int" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="Modifyby" Type="int" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SubjectMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubjectNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BranchId" Type="int" Nullable="false" />
+    <Property Name="DepartmentId" Type="int" Nullable="false" />
+    <Property Name="SectionId" Type="int" Nullable="false" />
+    <Property Name="SubjectName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EntryBy" Type="int" />
+    <Property Name="StandardId" Type="int" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="int" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TeachersAttendence">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="DepartmentId" Type="int" />
+    <Property Name="SectionId" Type="int" />
+    <Property Name="BranchId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="EntryBy" Type="int" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UserCredential">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Flag" Type="int" />
+    <Property Name="EmailFlag" Type="int" />
+    <Property Name="EmailSentOn" Type="datetime" />
+    <Property Name="IP_ADDRESS" Type="varchar" MaxLength="20" />
+    <Property Name="LAST_lOGIN" Type="datetime" />
+    <Property Name="CurrentLogin_time" Type="datetime" />
+    <Property Name="JsonResponse" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="UserDetailsMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CollegeID" Type="int" />
+    <Property Name="SectionID" Type="int" />
+    <Property Name="DepartmentID" Type="int" />
+    <Property Name="BranchID" Type="int" />
+    <Property Name="UniqueId" Type="bigint" />
+    <Property Name="RoleID" Type="int" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="255" />
+    <Property Name="MiddleName" Type="nvarchar" MaxLength="255" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="255" />
+    <Property Name="MobileNo" Type="nvarchar" MaxLength="12" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="255" />
+    <Property Name="DistrictId" Type="int" />
+    <Property Name="StateId" Type="int" />
+    <Property Name="CountryId" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="EntryBy" Type="int" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="int" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="EduQualification" Type="int" />
+  </EntityType>
+  <EntityType Name="YearMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="YearName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_BranchMaster_CollegeMaster">
+    <End Role="CollegeMaster" Type="Self.CollegeMaster" Multiplicity="1" />
+    <End Role="BranchMaster" Type="Self.BranchMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CollegeMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BranchMaster">
+        <PropertyRef Name="CollegeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DeparmentMaster_CollegeMaster">
+    <End Role="CollegeMaster" Type="Self.CollegeMaster" Multiplicity="0..1" />
+    <End Role="DeparmentMaster" Type="Self.DeparmentMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CollegeMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DeparmentMaster">
+        <PropertyRef Name="CollegeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DeparmentMaster_SectionMaster">
+    <End Role="SectionMaster" Type="Self.SectionMaster" Multiplicity="0..1" />
+    <End Role="DeparmentMaster" Type="Self.DeparmentMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SectionMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DeparmentMaster">
+        <PropertyRef Name="SectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DistrictMaster_CountryMaster">
+    <End Role="CountryMaster" Type="Self.CountryMaster" Multiplicity="1" />
+    <End Role="DistrictMaster" Type="Self.DistrictMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CountryMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DistrictMaster">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DistrictMaster_StateMaster">
+    <End Role="StateMaster" Type="Self.StateMaster" Multiplicity="1" />
+    <End Role="DistrictMaster" Type="Self.DistrictMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StateMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DistrictMaster">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PeriodMaster_CollegeMaster">
+    <End Role="CollegeMaster" Type="Self.CollegeMaster" Multiplicity="1" />
+    <End Role="PeriodMaster" Type="Self.PeriodMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CollegeMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PeriodMaster">
+        <PropertyRef Name="CollegeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PeriodMaster_DeparmentMaster">
+    <End Role="DeparmentMaster" Type="Self.DeparmentMaster" Multiplicity="1" />
+    <End Role="PeriodMaster" Type="Self.PeriodMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeparmentMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PeriodMaster">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PeriodMaster_DeparmentMaster1">
+    <End Role="DeparmentMaster" Type="Self.DeparmentMaster" Multiplicity="1" />
+    <End Role="PeriodMaster" Type="Self.PeriodMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeparmentMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PeriodMaster">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PeriodMaster_SectionMaster">
+    <End Role="SectionMaster" Type="Self.SectionMaster" Multiplicity="1" />
+    <End Role="PeriodMaster" Type="Self.PeriodMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SectionMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PeriodMaster">
+        <PropertyRef Name="SectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StandardMaster_BranchMaster">
+    <End Role="BranchMaster" Type="Self.BranchMaster" Multiplicity="1" />
+    <End Role="StandardMaster" Type="Self.StandardMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BranchMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StandardMaster">
+        <PropertyRef Name="BranchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StandardMaster_SectionMaster">
+    <End Role="SectionMaster" Type="Self.SectionMaster" Multiplicity="1" />
+    <End Role="StandardMaster" Type="Self.StandardMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SectionMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StandardMaster">
+        <PropertyRef Name="SectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StateMaster_CountryMaster">
+    <End Role="CountryMaster" Type="Self.CountryMaster" Multiplicity="1" />
+    <End Role="StateMaster" Type="Self.StateMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CountryMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StateMaster">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_AcedemicYearMaster">
+    <End Role="AcedemicYearMaster" Type="Self.AcedemicYearMaster" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AcedemicYearMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="AcademicYearId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_BranchMaster">
+    <End Role="BranchMaster" Type="Self.BranchMaster" Multiplicity="1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BranchMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="BranchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_CollegeMaster">
+    <End Role="CollegeMaster" Type="Self.CollegeMaster" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CollegeMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="CollegeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_CountryMaster">
+    <End Role="CountryMaster" Type="Self.CountryMaster" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CountryMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_DeparmentMaster">
+    <End Role="DeparmentMaster" Type="Self.DeparmentMaster" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeparmentMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_DistrictMaster">
+    <End Role="DistrictMaster" Type="Self.DistrictMaster" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DistrictMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="DistrictId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_DivisionMaster">
+    <End Role="DivisionMaster" Type="Self.DivisionMaster" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DivisionMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="DivisionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_SectionMaster">
+    <End Role="SectionMaster" Type="Self.SectionMaster" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SectionMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="SectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_YearMaster">
+    <End Role="YearMaster" Type="Self.YearMaster" Multiplicity="0..1" />
+    <End Role="Student" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="YearMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="YearId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentAttendence_CollegeMaster">
+    <End Role="CollegeMaster" Type="Self.CollegeMaster" Multiplicity="1" />
+    <End Role="StudentAttendence" Type="Self.StudentAttendence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CollegeMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudentAttendence">
+        <PropertyRef Name="CollegeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentAttendence_DivisionMaster">
+    <End Role="DivisionMaster" Type="Self.DivisionMaster" Multiplicity="0..1" />
+    <End Role="StudentAttendence" Type="Self.StudentAttendence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DivisionMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudentAttendence">
+        <PropertyRef Name="EntryBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentAttendence_StandardMaster">
+    <End Role="StandardMaster" Type="Self.StandardMaster" Multiplicity="1" />
+    <End Role="StudentAttendence" Type="Self.StudentAttendence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StandardMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudentAttendence">
+        <PropertyRef Name="StandardID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentAttendence_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="StudentAttendence" Type="Self.StudentAttendence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudentAttendence">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentAttendenceCount_CollegeMaster">
+    <End Role="CollegeMaster" Type="Self.CollegeMaster" Multiplicity="1" />
+    <End Role="StudentAttendenceCount" Type="Self.StudentAttendenceCount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CollegeMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudentAttendenceCount">
+        <PropertyRef Name="CollegelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentAttendenceCount_DeparmentMaster">
+    <End Role="DeparmentMaster" Type="Self.DeparmentMaster" Multiplicity="1" />
+    <End Role="StudentAttendenceCount" Type="Self.StudentAttendenceCount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeparmentMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudentAttendenceCount">
+        <PropertyRef Name="DeparmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentAttendenceCount_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="StudentAttendenceCount" Type="Self.StudentAttendenceCount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudentAttendenceCount">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubjectMaster_BranchMaster">
+    <End Role="BranchMaster" Type="Self.BranchMaster" Multiplicity="1" />
+    <End Role="SubjectMaster" Type="Self.SubjectMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BranchMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubjectMaster">
+        <PropertyRef Name="BranchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubjectMaster_DeparmentMaster">
+    <End Role="DeparmentMaster" Type="Self.DeparmentMaster" Multiplicity="1" />
+    <End Role="SubjectMaster" Type="Self.SubjectMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeparmentMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubjectMaster">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubjectMaster_SectionMaster">
+    <End Role="SectionMaster" Type="Self.SectionMaster" Multiplicity="1" />
+    <End Role="SubjectMaster" Type="Self.SubjectMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SectionMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubjectMaster">
+        <PropertyRef Name="SectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubjectMaster_StandardMaster">
+    <End Role="StandardMaster" Type="Self.StandardMaster" Multiplicity="0..1" />
+    <End Role="SubjectMaster" Type="Self.SubjectMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StandardMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubjectMaster">
+        <PropertyRef Name="StandardId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserCredential_RoleMaster">
+    <End Role="RoleMaster" Type="Self.RoleMaster" Multiplicity="0..1" />
+    <End Role="UserCredential" Type="Self.UserCredential" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoleMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserCredential">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserCredential_UserDetailsMaster">
+    <End Role="UserDetailsMaster" Type="Self.UserDetailsMaster" Multiplicity="0..1" />
+    <End Role="UserCredential" Type="Self.UserCredential" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetailsMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserCredential">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDetailsMaster_BranchMaster">
+    <End Role="BranchMaster" Type="Self.BranchMaster" Multiplicity="0..1" />
+    <End Role="UserDetailsMaster" Type="Self.UserDetailsMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BranchMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDetailsMaster">
+        <PropertyRef Name="BranchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDetailsMaster_CollegeMaster">
+    <End Role="CollegeMaster" Type="Self.CollegeMaster" Multiplicity="0..1" />
+    <End Role="UserDetailsMaster" Type="Self.UserDetailsMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CollegeMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDetailsMaster">
+        <PropertyRef Name="CollegeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDetailsMaster_CountryMaster">
+    <End Role="CountryMaster" Type="Self.CountryMaster" Multiplicity="0..1" />
+    <End Role="UserDetailsMaster" Type="Self.UserDetailsMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CountryMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDetailsMaster">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDetailsMaster_DeparmentMaster">
+    <End Role="DeparmentMaster" Type="Self.DeparmentMaster" Multiplicity="0..1" />
+    <End Role="UserDetailsMaster" Type="Self.UserDetailsMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeparmentMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDetailsMaster">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDetailsMaster_DistrictMaster">
+    <End Role="DistrictMaster" Type="Self.DistrictMaster" Multiplicity="0..1" />
+    <End Role="UserDetailsMaster" Type="Self.UserDetailsMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DistrictMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDetailsMaster">
+        <PropertyRef Name="DistrictId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDetailsMaster_RoleMaster">
+    <End Role="RoleMaster" Type="Self.RoleMaster" Multiplicity="0..1" />
+    <End Role="UserDetailsMaster" Type="Self.UserDetailsMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoleMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDetailsMaster">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDetailsMaster_SectionMaster">
+    <End Role="SectionMaster" Type="Self.SectionMaster" Multiplicity="0..1" />
+    <End Role="UserDetailsMaster" Type="Self.UserDetailsMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SectionMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDetailsMaster">
+        <PropertyRef Name="SectionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AttendenceManagementSystemModelStoreContainer">
+    <EntitySet Name="AcedemicYearMaster" EntityType="Self.AcedemicYearMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BranchMaster" EntityType="Self.BranchMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CollegeMaster" EntityType="Self.CollegeMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CountryMaster" EntityType="Self.CountryMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DeparmentMaster" EntityType="Self.DeparmentMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DistrictMaster" EntityType="Self.DistrictMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DivisionMaster" EntityType="Self.DivisionMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MonthMaster" EntityType="Self.MonthMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PeriodMaster" EntityType="Self.PeriodMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoleMaster" EntityType="Self.RoleMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SectionMaster" EntityType="Self.SectionMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StandardMaster" EntityType="Self.StandardMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StateMaster" EntityType="Self.StateMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentAttendence" EntityType="Self.StudentAttendence" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentAttendenceCount" EntityType="Self.StudentAttendenceCount" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubjectMaster" EntityType="Self.SubjectMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TeachersAttendence" EntityType="Self.TeachersAttendence" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserCredential" EntityType="Self.UserCredential" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserDetailsMaster" EntityType="Self.UserDetailsMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="YearMaster" EntityType="Self.YearMaster" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_BranchMaster_CollegeMaster" Association="Self.FK_BranchMaster_CollegeMaster">
+      <End Role="CollegeMaster" EntitySet="CollegeMaster" />
+      <End Role="BranchMaster" EntitySet="BranchMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DeparmentMaster_CollegeMaster" Association="Self.FK_DeparmentMaster_CollegeMaster">
+      <End Role="CollegeMaster" EntitySet="CollegeMaster" />
+      <End Role="DeparmentMaster" EntitySet="DeparmentMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DeparmentMaster_SectionMaster" Association="Self.FK_DeparmentMaster_SectionMaster">
+      <End Role="SectionMaster" EntitySet="SectionMaster" />
+      <End Role="DeparmentMaster" EntitySet="DeparmentMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DistrictMaster_CountryMaster" Association="Self.FK_DistrictMaster_CountryMaster">
+      <End Role="CountryMaster" EntitySet="CountryMaster" />
+      <End Role="DistrictMaster" EntitySet="DistrictMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DistrictMaster_StateMaster" Association="Self.FK_DistrictMaster_StateMaster">
+      <End Role="StateMaster" EntitySet="StateMaster" />
+      <End Role="DistrictMaster" EntitySet="DistrictMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PeriodMaster_CollegeMaster" Association="Self.FK_PeriodMaster_CollegeMaster">
+      <End Role="CollegeMaster" EntitySet="CollegeMaster" />
+      <End Role="PeriodMaster" EntitySet="PeriodMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PeriodMaster_DeparmentMaster" Association="Self.FK_PeriodMaster_DeparmentMaster">
+      <End Role="DeparmentMaster" EntitySet="DeparmentMaster" />
+      <End Role="PeriodMaster" EntitySet="PeriodMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PeriodMaster_DeparmentMaster1" Association="Self.FK_PeriodMaster_DeparmentMaster1">
+      <End Role="DeparmentMaster" EntitySet="DeparmentMaster" />
+      <End Role="PeriodMaster" EntitySet="PeriodMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PeriodMaster_SectionMaster" Association="Self.FK_PeriodMaster_SectionMaster">
+      <End Role="SectionMaster" EntitySet="SectionMaster" />
+      <End Role="PeriodMaster" EntitySet="PeriodMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StandardMaster_BranchMaster" Association="Self.FK_StandardMaster_BranchMaster">
+      <End Role="BranchMaster" EntitySet="BranchMaster" />
+      <End Role="StandardMaster" EntitySet="StandardMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StandardMaster_SectionMaster" Association="Self.FK_StandardMaster_SectionMaster">
+      <End Role="SectionMaster" EntitySet="SectionMaster" />
+      <End Role="StandardMaster" EntitySet="StandardMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StateMaster_CountryMaster" Association="Self.FK_StateMaster_CountryMaster">
+      <End Role="CountryMaster" EntitySet="CountryMaster" />
+      <End Role="StateMaster" EntitySet="StateMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_AcedemicYearMaster" Association="Self.FK_Student_AcedemicYearMaster">
+      <End Role="AcedemicYearMaster" EntitySet="AcedemicYearMaster" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_BranchMaster" Association="Self.FK_Student_BranchMaster">
+      <End Role="BranchMaster" EntitySet="BranchMaster" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_CollegeMaster" Association="Self.FK_Student_CollegeMaster">
+      <End Role="CollegeMaster" EntitySet="CollegeMaster" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_CountryMaster" Association="Self.FK_Student_CountryMaster">
+      <End Role="CountryMaster" EntitySet="CountryMaster" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_DeparmentMaster" Association="Self.FK_Student_DeparmentMaster">
+      <End Role="DeparmentMaster" EntitySet="DeparmentMaster" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_DistrictMaster" Association="Self.FK_Student_DistrictMaster">
+      <End Role="DistrictMaster" EntitySet="DistrictMaster" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_DivisionMaster" Association="Self.FK_Student_DivisionMaster">
+      <End Role="DivisionMaster" EntitySet="DivisionMaster" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_SectionMaster" Association="Self.FK_Student_SectionMaster">
+      <End Role="SectionMaster" EntitySet="SectionMaster" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_YearMaster" Association="Self.FK_Student_YearMaster">
+      <End Role="YearMaster" EntitySet="YearMaster" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentAttendence_CollegeMaster" Association="Self.FK_StudentAttendence_CollegeMaster">
+      <End Role="CollegeMaster" EntitySet="CollegeMaster" />
+      <End Role="StudentAttendence" EntitySet="StudentAttendence" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentAttendence_DivisionMaster" Association="Self.FK_StudentAttendence_DivisionMaster">
+      <End Role="DivisionMaster" EntitySet="DivisionMaster" />
+      <End Role="StudentAttendence" EntitySet="StudentAttendence" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentAttendence_StandardMaster" Association="Self.FK_StudentAttendence_StandardMaster">
+      <End Role="StandardMaster" EntitySet="StandardMaster" />
+      <End Role="StudentAttendence" EntitySet="StudentAttendence" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentAttendence_Student" Association="Self.FK_StudentAttendence_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="StudentAttendence" EntitySet="StudentAttendence" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentAttendenceCount_CollegeMaster" Association="Self.FK_StudentAttendenceCount_CollegeMaster">
+      <End Role="CollegeMaster" EntitySet="CollegeMaster" />
+      <End Role="StudentAttendenceCount" EntitySet="StudentAttendenceCount" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentAttendenceCount_DeparmentMaster" Association="Self.FK_StudentAttendenceCount_DeparmentMaster">
+      <End Role="DeparmentMaster" EntitySet="DeparmentMaster" />
+      <End Role="StudentAttendenceCount" EntitySet="StudentAttendenceCount" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentAttendenceCount_Student" Association="Self.FK_StudentAttendenceCount_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="StudentAttendenceCount" EntitySet="StudentAttendenceCount" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubjectMaster_BranchMaster" Association="Self.FK_SubjectMaster_BranchMaster">
+      <End Role="BranchMaster" EntitySet="BranchMaster" />
+      <End Role="SubjectMaster" EntitySet="SubjectMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubjectMaster_DeparmentMaster" Association="Self.FK_SubjectMaster_DeparmentMaster">
+      <End Role="DeparmentMaster" EntitySet="DeparmentMaster" />
+      <End Role="SubjectMaster" EntitySet="SubjectMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubjectMaster_SectionMaster" Association="Self.FK_SubjectMaster_SectionMaster">
+      <End Role="SectionMaster" EntitySet="SectionMaster" />
+      <End Role="SubjectMaster" EntitySet="SubjectMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubjectMaster_StandardMaster" Association="Self.FK_SubjectMaster_StandardMaster">
+      <End Role="StandardMaster" EntitySet="StandardMaster" />
+      <End Role="SubjectMaster" EntitySet="SubjectMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserCredential_RoleMaster" Association="Self.FK_UserCredential_RoleMaster">
+      <End Role="RoleMaster" EntitySet="RoleMaster" />
+      <End Role="UserCredential" EntitySet="UserCredential" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserCredential_UserDetailsMaster" Association="Self.FK_UserCredential_UserDetailsMaster">
+      <End Role="UserDetailsMaster" EntitySet="UserDetailsMaster" />
+      <End Role="UserCredential" EntitySet="UserCredential" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDetailsMaster_BranchMaster" Association="Self.FK_UserDetailsMaster_BranchMaster">
+      <End Role="BranchMaster" EntitySet="BranchMaster" />
+      <End Role="UserDetailsMaster" EntitySet="UserDetailsMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDetailsMaster_CollegeMaster" Association="Self.FK_UserDetailsMaster_CollegeMaster">
+      <End Role="CollegeMaster" EntitySet="CollegeMaster" />
+      <End Role="UserDetailsMaster" EntitySet="UserDetailsMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDetailsMaster_CountryMaster" Association="Self.FK_UserDetailsMaster_CountryMaster">
+      <End Role="CountryMaster" EntitySet="CountryMaster" />
+      <End Role="UserDetailsMaster" EntitySet="UserDetailsMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDetailsMaster_DeparmentMaster" Association="Self.FK_UserDetailsMaster_DeparmentMaster">
+      <End Role="DeparmentMaster" EntitySet="DeparmentMaster" />
+      <End Role="UserDetailsMaster" EntitySet="UserDetailsMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDetailsMaster_DistrictMaster" Association="Self.FK_UserDetailsMaster_DistrictMaster">
+      <End Role="DistrictMaster" EntitySet="DistrictMaster" />
+      <End Role="UserDetailsMaster" EntitySet="UserDetailsMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDetailsMaster_RoleMaster" Association="Self.FK_UserDetailsMaster_RoleMaster">
+      <End Role="RoleMaster" EntitySet="RoleMaster" />
+      <End Role="UserDetailsMaster" EntitySet="UserDetailsMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDetailsMaster_SectionMaster" Association="Self.FK_UserDetailsMaster_SectionMaster">
+      <End Role="SectionMaster" EntitySet="SectionMaster" />
+      <End Role="UserDetailsMaster" EntitySet="UserDetailsMaster" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

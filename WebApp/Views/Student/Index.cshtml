@@ -1,0 +1,110 @@
+﻿@model IEnumerable<BusinessEntity.StudentEntity>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link href="../../Content/custom.css" rel="stylesheet" type="text/css" />
+</head>
+<div class="container">
+    <div class="navbar-header" style="margin-top: 22px; margin-bottom: 33px; ">
+        @Html.ActionLink("Create New", "Create", new { area = "" }, new { @class = "btn btn-primary btn-lg" })
+    </div>
+</div>
+
+<div class="tbl-header">Studnet Master</div>
+<table id="table">
+    <tr class="head">
+        <th>
+            @Html.DisplayNameFor(model => model.URNNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RollNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotherName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Village)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Taluka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CountryId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Flag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeparmentMaster.DepartmentName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.DivisionMaster.DivisionName)
+        </th>
+        <th>
+            <label for="action">Action</label>
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.URNNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RollNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MotherName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Village)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Taluka)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Flag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeparmentMaster.DepartmentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DivisionMaster.DivisionName)
+            </td>
+            <td>
+                <a href='@Url.Action("Edit", "Edit",new { id = item.Id })' class="btn btn-primary">EDIT</a>
+                <a href='@Url.Action("Delete", "Delete",new { id = item.Id })' class="btn btn-danger">DELETE</a>
+              
+            </td>
+        </tr>
+    }
+
+</table>

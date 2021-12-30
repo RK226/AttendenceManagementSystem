@@ -1,0 +1,53 @@
+﻿@model IEnumerable<BusinessEntities.BranchMasterEntity>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link href="../../Content/custom.css" rel="stylesheet" type="text/css" />
+</head>
+
+<div class="container">
+    <div class="navbar-header" style="margin-top: 22px; margin-bottom: 33px; ">
+        @Html.ActionLink("Create New", "CreateBranch", new { area = "" }, new { @class = "btn btn-primary btn-lg" })
+    </div>
+</div>
+
+<div class="tbl-header">Branch Master</div>
+<br />
+<table id="table">
+    <tr class="head">
+        <th>
+            @Html.DisplayNameFor(model => model.BranchName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CollegeMaster.CollegeName)
+        </th>
+
+        <th>
+            <label for="action">Action</label>
+
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BranchName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CollegeMaster.CollegeName)
+            </td>
+
+            <td>
+                <a href='@Url.Action("UpdateBranch", "Branch",new { id = item.Id })' class="btn btn-primary">EDIT</a>
+                <a href='@Url.Action("Delete", "Branch",new { id = item.Id })' class="btn btn-danger">DELETE</a>
+              
+            </td>
+        </tr>
+    }
+
+</table>

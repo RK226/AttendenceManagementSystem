@@ -1,0 +1,67 @@
+﻿.tbl-header {
+    text-align: center;
+    font-size: x-large;
+    border-width: 0 0 1px;
+    background: linear-gradient( 45deg, black, transparent);
+    font-weight: BOLDER;
+    
+}
+
+#table {
+    border: solid;
+}
+
+    #table th{
+        text-align: center;
+    }
+
+    #table td {
+        text-align: center;
+    }
+
+#table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    #table td, #table th {
+        border: 2px solid #ddd;
+        padding: 8px;
+    }
+
+
+    #table .head {
+        background-color: #2e6da4;
+    }
+
+    #table tr:hover {
+        background-color: crimson;
+    }
+
+
+
+
+    #country th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+    }
+
+    /*
+        Create Form
+    */
+
+.container .panel-title {
+    text-align: center;
+    font-size: x-large;
+    border-width: 0 0 1px;
+    background: linear-gradient( 45deg, black, transparent);
+    font-weight: BOLDER;
+}
+
+.container .panel-title  {
+    background-color: #2e6da4;
+}

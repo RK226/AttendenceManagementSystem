@@ -1,0 +1,307 @@
+﻿@model DataModel.Student
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.URNNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.URNNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RollNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RollNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AadharNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AadharNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MiddleName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MiddleName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GrandFatherName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GrandFatherName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotherName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotherName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Religion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Religion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Caste)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Caste)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nationality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nationality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DOB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Village)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Village)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Taluka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Taluka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StateId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StateId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CountryId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CountryId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pincode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pincode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EntryBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EntryBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EntryDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EntryDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifyBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifyBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifyDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifyDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Photo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Photo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Flag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AcedemicYearMaster.AcedemicYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AcedemicYearMaster.AcedemicYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BranchMaster.BranchName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BranchMaster.BranchName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CollegeMaster.CollegeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CollegeMaster.CollegeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CountryMaster.CountryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CountryMaster.CountryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeparmentMaster.DepartmentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeparmentMaster.DepartmentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DistrictMaster.DistrictName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DistrictMaster.DistrictName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DivisionMaster.DivisionName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DivisionMaster.DivisionName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SectionMaster.SectionName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SectionMaster.SectionName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SectionMaster1.SectionName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SectionMaster1.SectionName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YearMaster.YearName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YearMaster.YearName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,65 @@
+﻿@model BusinessEntity.CountryMasterEntity
+
+@{
+    ViewBag.Title = "CreateCountry";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <meta charset="utf-8" />
+    <link href="../../Content/custom.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - K.S.K.W.College Nashik</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="container-fluid" style="background: #fff">
+        <div style="margin-top: 5px">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="../../DashBoard.aspx"><span class="fa fa-home"></span>HOME</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a><span class="fa fa-print"></span>Country List</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <strong>Create Country</strong>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="container">
+        <div class="panel panel-info" style="margin-top: 0px; ">
+            <div class="tbl-header">Country Master</div> 
+            @*<div class="panel-heading">
+            <h3 class="panel-title" style="text-align: center; font-size: 17px"><strong>Country</strong></h3>
+           </div>*@
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-4 col-lg-offset-4">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            <label for="">Country Name<span style="color: red"> * </span></label>
+                            @Html.EditorFor(model => model.CountryName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.CountryName, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group pull-right">
+                            <input type="submit" value="Create" class="btn btn-success" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

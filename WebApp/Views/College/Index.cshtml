@@ -1,0 +1,142 @@
+﻿@model IEnumerable<BusinessEntities.CollegeMasterEntity>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<head>
+    <link href="../../Content/custom.css" rel="stylesheet" type="text/css" />
+</head>
+<div class="container">
+    <div class="navbar-header" style="margin-top: 22px; margin-bottom: 33px; ">
+        @Html.ActionLink("Create New", "CreateCollege", new { area = "" }, new { @class = "btn btn-primary btn-lg" })
+    </div>
+</div>
+
+<div class="tbl-header">College Master</div>
+<br />
+
+
+<table id="table">
+    <tr class="head">
+        <th>
+            @Html.DisplayNameFor(model => model.CollegeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Taluka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DistrictMaster.DistrictName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StateMaster.StateName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PinCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CollegeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Taluka)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DistrictMaster.DistrictName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StateMaster.StateName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PinCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactNo)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+
+            <td>
+                <a href='@Url.Action("UpdateCollege", "College",new { id = item.Id })' class="btn btn-primary">EDIT</a>
+                <a href='@Url.Action("Delete", "College",new { id = item.Id })' class="btn btn-danger">DELETE</a>
+                @*<a href='@Url.Action("Details", "Country",new { id = item.Id })' class="btn btn-success">DETAIL</a>*@
+
+
+            </td>
+        </tr>
+    }
+
+</table>
+
+<!--<div style="width:90%; margin:0 auto;">
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>College _Name</th>
+                <th>Address</th>
+                <th>Taluka</th>
+                <th>State</th>
+                <th>Pin Code</th>
+                <th>Contact No</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+<style>
+    tr.even {
+        background-color: #F5F5F5 !important;
+    }
+</style>-->
+@* Load datatable css *@
+<!--<link href="//cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css" rel="stylesheet" />-->
+@* Load datatable js *@
+<!--@section Scripts{
+    <script src="//cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+                "ajax": {
+                    "url": "/home/loaddata",
+                    "type": "GET",
+                    "datatype": "json"
+                },
+                "columns" : [
+                        { "data": "ContactName", "autoWidth": true },
+                        { "data": "CompanyName", "autoWidth": true },
+                        { "data": "Phone", "autoWidth": true },
+                        { "data": "Country", "autoWidth": true },
+                        { "data": "City", "autoWidth": true },
+                        { "data": "PostalCode", "autoWidth": true }
+                    ]
+            });
+        });
+    </script>
+}-->

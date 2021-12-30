@@ -1,0 +1,15 @@
+C:\Users\Rahul\source\repos\AttendenceSystem\BusinessEntities\bin\Debug\BusinessEntities.dll
+C:\Users\Rahul\source\repos\AttendenceSystem\BusinessEntities\bin\Debug\BusinessEntities.pdb
+C:\Users\Rahul\source\repos\AttendenceSystem\BusinessEntities\bin\Debug\DataModel.dll
+C:\Users\Rahul\source\repos\AttendenceSystem\BusinessEntities\bin\Debug\EntityFramework.dll
+C:\Users\Rahul\source\repos\AttendenceSystem\BusinessEntities\bin\Debug\DataModel.pdb
+C:\Users\Rahul\source\repos\AttendenceSystem\BusinessEntities\bin\Debug\DataModel.dll.config
+C:\Users\Rahul\source\repos\AttendenceSystem\BusinessEntities\bin\Debug\EntityFramework.xml
+C:\Users\Rahul\source\repos\AttendenceSystem\BusinessEntities\obj\Debug\BusinessEntities.csproj.AssemblyReference.cache
+C:\Users\Rahul\source\repos\AttendenceSystem\BusinessEntities\obj\Debug\BusinessEntities.csproj.CoreCompileInputs.cache
+C:\Users\Rahul\source\repos\AttendenceSystem\BusinessEntities\obj\Debug\BusinessEntities.csproj.CopyComplete
+C:\Users\Rahul\source\repos\AttendenceSystem\BusinessEntities\obj\Debug\BusinessEntities.dll
+C:\Users\Rahul\source\repos\AttendenceSystem\BusinessEntities\obj\Debug\BusinessEntities.pdb
+C:\Users\Rahul\source\repos\AttendenceSystem\BusinessEntities\bin\Debug\BusinessEntities.dll.config
+C:\Users\Rahul\source\repos\AttendenceSystem\BusinessEntities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Rahul\source\repos\AttendenceSystem\BusinessEntities\bin\Debug\EntityFramework.SqlServer.xml
