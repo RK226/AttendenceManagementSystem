@@ -8,10 +8,11 @@
 <head>
     <meta charset="utf-8" />
     <link href="../../Content/custom.css" rel="stylesheet" type="text/css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - K.S.K.W.College Nashik</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    @*@Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")*@
 </head>
 
 @using (Html.BeginForm())
@@ -22,13 +23,13 @@
         <div style="margin-top: 5px">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="../../DashBoard.aspx"><span class="fa fa-home"></span>HOME</a>
+                    <a href="../../DashBoard.aspx"><span class="glyphicon glyphicon-home" style=" margin-inline-end: 11px; "></span>HOME</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a><span class="fa fa-print"></span>Student List</a>
+                    <a href="~/Student/Index"><span class="glyphicon glyphicon-list-alt" style=" margin-inline-end: 11px;"></span>Student List</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    <strong>Create Student</strong>
+                    <strong><span class="glyphicon glyphicon-edit" style=" margin-inline-end: 11px;"></span>Create Student</strong>
                 </li>
             </ol>
         </div>
@@ -36,7 +37,7 @@
 
     <div class="container">
         <div class="panel panel-info" style="margin-top: 0px; ">
-            <div class="tbl-header">District Master</div>
+            <div class="tbl-header"><span class="glyphicon glyphicon-user" style=" margin-inline-end: 11px; "></span>Student Master</div><br />
             @*<div class="panel-heading">
                  <h3 class="panel-title" style="text-align: center; font-size: 17px"><strong>Country</strong></h3>
                 </div>*@
@@ -134,11 +135,17 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="">Gender<span style="color: red"> * </span></label>
-                            @Html.EditorFor(model => model.Gender)
-                            @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                    <div class="col-md-4" >
+                        <div class="form-group" style="margin-top: 9px; ">
+                            <label for="">Gender<span style="color: red"> * </span></label><br />
+                            <label class="radio-inline">
+                                @Html.RadioButtonFor(model => model.Gender,true,new { @name = "gender" })
+                                Male
+                            </label>
+                            <label class="radio-inline">
+                                @Html.RadioButtonFor(model => model.Gender, false,new { @name = "gender" })
+                                Female
+                            </label>
                         </div>
                         <div class="form-group">
                             <label for="">Nationality<span style="color: red"> * </span></label>
@@ -158,7 +165,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="">Date Of Birth<span style="color: red"> * </span></label>
-                            @Html.EditorFor(model => model.DOB, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.DOB, new { htmlAttributes = new { @class = "form-control datetimepicker1" } })
                             @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-group">
@@ -221,7 +228,7 @@
 
                     </div>
                     <div class="col-md-4">
-                       
+
                         <div class="form-group">
                             <label for="">Flag<span style="color: red"> * </span></label>
                             @Html.EditorFor(model => model.Flag, new { htmlAttributes = new { @class = "form-control" } })

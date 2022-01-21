@@ -37,6 +37,7 @@ namespace DataModel
         public Nullable<int> Modifyby { get; set; }
         public Nullable<System.DateTime> ModifyDate { get; set; }
     
+        public virtual AcedemicYearMaster AcedemicYearMaster { get; set; }
         public virtual CollegeMaster CollegeMaster { get; set; }
         public virtual DeparmentMaster DeparmentMaster { get; set; }
         public virtual Student Student { get; set; }

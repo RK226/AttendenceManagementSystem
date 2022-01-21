@@ -7,9 +7,9 @@ namespace BusinessEntities
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please Enter Branch Name")]
         public string BranchName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Please Select College")]
         public int CollegeId { get; set; }
         public int?  CreatedBy { get; set; }
         public DateTime? CreatedDate { get; set; }

@@ -28,6 +28,9 @@ namespace DataModel.UnitOfWork
             private GenericRepository<SubjectMaster> _mstSubjectMasterRepository;
             private GenericRepository<YearMaster> _mstYearMasterRepository;
             private GenericRepository<DivisionMaster> _mstDivisionMasterRepository;
+            private GenericRepository<UserDetailsMaster> _mstUserDetailsMasterRepository;
+            private GenericRepository<UserCredential> _mstUserCredentialMasterRepository;
+            private GenericRepository<StudentAttendence> _mstStudentAttendenceRepository;
 
 
         #endregion
@@ -38,6 +41,37 @@ namespace DataModel.UnitOfWork
             }
 
         #region Public Repository Creation properties...
+
+        public GenericRepository<StudentAttendence> MstStudentAttendenceRepository
+        {
+            get
+            {
+                if (this._mstStudentAttendenceRepository == null)
+                    this._mstStudentAttendenceRepository = new GenericRepository<StudentAttendence>(_context);
+                return _mstStudentAttendenceRepository;
+            }
+        }
+
+        public GenericRepository<UserCredential> MstUserCredentialMasterRepository
+        {
+            get
+            {
+                if (this._mstUserCredentialMasterRepository == null)
+                    this._mstUserCredentialMasterRepository = new GenericRepository<UserCredential>(_context);
+                return _mstUserCredentialMasterRepository;
+            }
+        }
+
+
+        public GenericRepository<UserDetailsMaster> MstUserDetailsMasterRepository
+        {
+            get
+            {
+                if (this._mstUserDetailsMasterRepository == null)
+                    this._mstUserDetailsMasterRepository = new GenericRepository<UserDetailsMaster>(_context);
+                return _mstUserDetailsMasterRepository;
+            }
+        }
 
         public GenericRepository<DivisionMaster> MstDivisionMasterRepository
         {
@@ -185,7 +219,7 @@ namespace DataModel.UnitOfWork
                             outputLines.Add(string.Format("- Property: \"{0}\", Error: \"{1}\"", ve.PropertyName, ve.ErrorMessage));
                         }
                     }
-                    System.IO.File.AppendAllLines(@"C:\errors.txt", outputLines);
+                    //System.IO.File.AppendAllLines(@"C:\errors.txt", outputLines);
 
                     throw e;
                 }

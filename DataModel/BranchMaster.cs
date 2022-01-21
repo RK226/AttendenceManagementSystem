@@ -20,6 +20,7 @@ namespace DataModel
             this.StandardMasters = new HashSet<StandardMaster>();
             this.Students = new HashSet<Student>();
             this.SubjectMasters = new HashSet<SubjectMaster>();
+            this.TeachersAttendences = new HashSet<TeachersAttendence>();
             this.UserDetailsMasters = new HashSet<UserDetailsMaster>();
         }
     
@@ -38,6 +39,8 @@ namespace DataModel
         public virtual ICollection<Student> Students { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SubjectMaster> SubjectMasters { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TeachersAttendence> TeachersAttendences { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserDetailsMaster> UserDetailsMasters { get; set; }
     }

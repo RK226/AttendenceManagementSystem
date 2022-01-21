@@ -67,7 +67,7 @@ namespace WebApp.Controllers
             ViewBag.StateId = new SelectList(_context.StateMasters, "Id", "StateName");
             ViewBag.DivisionId = new SelectList(_context.DivisionMasters, "Id", "DivisionName");
             ViewBag.SectionId = new SelectList(_context.SectionMasters, "Id", "SectionName");
-            ViewBag.StandardId = new SelectList(_context.SectionMasters, "Id", "SectionName");
+            ViewBag.StandardId = new SelectList(_context.StandardMasters, "Id", "StandardName");
             ViewBag.YearId = new SelectList(_context.YearMasters, "Id", "YearName");
             return View();
         }
@@ -79,22 +79,23 @@ namespace WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,URNNo,RollNo,CollegeId,SectionId,DepartmentId,AcademicYearId,Gender,AadharNo,LastName,FirstName,MiddleName,GrandFatherName,MotherName,ContactNo,EmailId,Religion,Caste,Nationality,DOB,Village,Taluka,DistrictId,StateId,CountryId,Pincode,StandardId,DivisionId,YearId,EntryBy,EntryDate,ModifyBy,ModifyDate,Photo,Flag,BranchId")] Student student)
         {
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            //{
                 _context.Students.Add(student);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
-            }
+           // }
 
             ViewBag.AcademicYearId = new SelectList(_context.AcedemicYearMasters, "Id", "AcedemicYear", student.AcademicYearId);
             ViewBag.BranchId = new SelectList(_context.BranchMasters, "Id", "BranchName", student.BranchId);
             ViewBag.CollegeId = new SelectList(_context.CollegeMasters, "Id", "CollegeName", student.CollegeId);
-            ViewBag.DepartmentId = new SelectList(_context.CountryMasters, "Id", "CountryName", student.DepartmentId);
             ViewBag.DepartmentId = new SelectList(_context.DeparmentMasters, "Id", "DepartmentName", student.DepartmentId);
+            ViewBag.StateId = new SelectList(_context.StateMasters, "Id", "StateName", student.StateId);
+            ViewBag.CountryId = new SelectList(_context.CountryMasters, "Id", "CountryName", student.CountryId);
             ViewBag.DistrictId = new SelectList(_context.DistrictMasters, "Id", "DistrictName", student.DistrictId);
             ViewBag.DivisionId = new SelectList(_context.DivisionMasters, "Id", "DivisionName", student.DivisionId);
             ViewBag.SectionId = new SelectList(_context.SectionMasters, "Id", "SectionName", student.SectionId);
-            ViewBag.StandardId = new SelectList(_context.SectionMasters, "Id", "SectionName", student.StandardId);
+            ViewBag.StandardId = new SelectList(_context.StandardMasters, "Id", "StandardName", student.StandardId);
             ViewBag.YearId = new SelectList(_context.YearMasters, "Id", "YearName", student.YearId);
             return View(student);
         }
@@ -114,12 +115,13 @@ namespace WebApp.Controllers
             ViewBag.AcademicYearId = new SelectList(_context.AcedemicYearMasters, "Id", "AcedemicYear", student.AcademicYearId);
             ViewBag.BranchId = new SelectList(_context.BranchMasters, "Id", "BranchName", student.BranchId);
             ViewBag.CollegeId = new SelectList(_context.CollegeMasters, "Id", "CollegeName", student.CollegeId);
-            ViewBag.DepartmentId = new SelectList(_context.CountryMasters, "Id", "CountryName", student.DepartmentId);
             ViewBag.DepartmentId = new SelectList(_context.DeparmentMasters, "Id", "DepartmentName", student.DepartmentId);
             ViewBag.DistrictId = new SelectList(_context.DistrictMasters, "Id", "DistrictName", student.DistrictId);
+            ViewBag.StateId = new SelectList(_context.StateMasters, "Id", "StateName", student.StateId);
+            ViewBag.CountryId = new SelectList(_context.CountryMasters, "Id", "CountryName", student.CountryId);
             ViewBag.DivisionId = new SelectList(_context.DivisionMasters, "Id", "DivisionName", student.DivisionId);
             ViewBag.SectionId = new SelectList(_context.SectionMasters, "Id", "SectionName", student.SectionId);
-            ViewBag.StandardId = new SelectList(_context.SectionMasters, "Id", "SectionName", student.StandardId);
+            ViewBag.StandardId = new SelectList(_context.StandardMasters, "Id", "StandardName", student.StandardId);
             ViewBag.YearId = new SelectList(_context.YearMasters, "Id", "YearName", student.YearId);
             return View(student);
         }
@@ -140,12 +142,13 @@ namespace WebApp.Controllers
             ViewBag.AcademicYearId = new SelectList(_context.AcedemicYearMasters, "Id", "AcedemicYear", student.AcademicYearId);
             ViewBag.BranchId = new SelectList(_context.BranchMasters, "Id", "BranchName", student.BranchId);
             ViewBag.CollegeId = new SelectList(_context.CollegeMasters, "Id", "CollegeName", student.CollegeId);
-            ViewBag.DepartmentId = new SelectList(_context.CountryMasters, "Id", "CountryName", student.DepartmentId);
             ViewBag.DepartmentId = new SelectList(_context.DeparmentMasters, "Id", "DepartmentName", student.DepartmentId);
+            ViewBag.StateId = new SelectList(_context.StateMasters, "Id", "StateName", student.StateId);
+            ViewBag.CountryId = new SelectList(_context.CountryMasters, "Id", "CountryName", student.CountryId);
             ViewBag.DistrictId = new SelectList(_context.DistrictMasters, "Id", "DistrictName", student.DistrictId);
             ViewBag.DivisionId = new SelectList(_context.DivisionMasters, "Id", "DivisionName", student.DivisionId);
             ViewBag.SectionId = new SelectList(_context.SectionMasters, "Id", "SectionName", student.SectionId);
-            ViewBag.StandardId = new SelectList(_context.SectionMasters, "Id", "SectionName", student.StandardId);
+            ViewBag.StandardId = new SelectList(_context.StandardMasters, "Id", "StandardName", student.StandardId);
             ViewBag.YearId = new SelectList(_context.YearMasters, "Id", "YearName", student.YearId);
             return View(student);
         }

@@ -19,8 +19,8 @@ namespace DataModel
         public Nullable<int> UserID { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
-        public Nullable<int> Flag { get; set; }
-        public Nullable<int> EmailFlag { get; set; }
+        public Nullable<bool> Flag { get; set; }
+        public Nullable<bool> EmailFlag { get; set; }
         public Nullable<System.DateTime> EmailSentOn { get; set; }
         public string IP_ADDRESS { get; set; }
         public Nullable<System.DateTime> LAST_lOGIN { get; set; }

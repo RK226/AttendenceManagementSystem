@@ -4,40 +4,43 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d94208d5e2df441688257f9566d8eebe" Name="Diagram1">
-        <EntityTypeShape EntityType="AttendenceManagementSystemModel.AcedemicYearMaster" Width="1.5" PointX="6" PointY="23" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendenceManagementSystemModel.BranchMaster" Width="1.5" PointX="3" PointY="18.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendenceManagementSystemModel.CollegeMaster" Width="1.5" PointX="0.75" PointY="16.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendenceManagementSystemModel.CountryMaster" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendenceManagementSystemModel.DeparmentMaster" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendenceManagementSystemModel.DistrictMaster" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendenceManagementSystemModel.DivisionMaster" Width="1.5" PointX="6" PointY="25.375" IsExpanded="true" />
+      <Diagram DiagramId="05a0a1e930e547c9861a93b1a14b573f" Name="Diagram1">
+        <EntityTypeShape EntityType="AttendenceManagementSystemModel.AcedemicYearMaster" Width="1.5" PointX="11.5" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendenceManagementSystemModel.BranchMaster" Width="1.5" PointX="3" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendenceManagementSystemModel.CollegeMaster" Width="1.5" PointX="0.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendenceManagementSystemModel.CountryMaster" Width="1.5" PointX="9" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendenceManagementSystemModel.DeparmentMaster" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendenceManagementSystemModel.DistrictMaster" Width="1.5" PointX="9" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendenceManagementSystemModel.DivisionMaster" Width="1.5" PointX="6" PointY="25.25" IsExpanded="true" />
         <EntityTypeShape EntityType="AttendenceManagementSystemModel.MonthMaster" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendenceManagementSystemModel.PeriodMaster" Width="1.5" PointX="8.25" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendenceManagementSystemModel.RoleMaster" Width="1.5" PointX="3" PointY="22.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendenceManagementSystemModel.SectionMaster" Width="1.5" PointX="0.75" PointY="12.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendenceManagementSystemModel.StandardMaster" Width="1.5" PointX="5.25" PointY="18.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendenceManagementSystemModel.StateMaster" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendenceManagementSystemModel.Student" Width="1.5" PointX="8.25" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendenceManagementSystemModel.StudentAttendence" Width="1.5" PointX="10.5" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendenceManagementSystemModel.StudentAttendenceCount" Width="1.5" PointX="15.75" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendenceManagementSystemModel.SubjectMaster" Width="1.5" PointX="13.5" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendenceManagementSystemModel.PeriodMaster" Width="1.5" PointX="8.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendenceManagementSystemModel.RoleMaster" Width="1.5" PointX="9" PointY="33.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendenceManagementSystemModel.SectionMaster" Width="1.5" PointX="0.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendenceManagementSystemModel.StandardMaster" Width="1.5" PointX="5.25" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendenceManagementSystemModel.StateMaster" Width="1.5" PointX="6.75" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendenceManagementSystemModel.Student" Width="1.5" PointX="8.25" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendenceManagementSystemModel.StudentAttendence" Width="1.5" PointX="13.5" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendenceManagementSystemModel.StudentAttendenceCount" Width="1.5" PointX="13.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendenceManagementSystemModel.SubjectMaster" Width="1.5" PointX="10.5" PointY="14" IsExpanded="true" />
         <EntityTypeShape EntityType="AttendenceManagementSystemModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendenceManagementSystemModel.TeachersAttendence" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendenceManagementSystemModel.UserCredential" Width="1.5" PointX="10.5" PointY="11.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendenceManagementSystemModel.UserDetailsMaster" Width="1.5" PointX="5.25" PointY="10.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="AttendenceManagementSystemModel.YearMaster" Width="1.5" PointX="6" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendenceManagementSystemModel.TeachersAttendence" Width="1.5" PointX="5.25" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendenceManagementSystemModel.UserCredential" Width="1.5" PointX="16.5" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendenceManagementSystemModel.UserDetailsMaster" Width="1.5" PointX="11.25" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AttendenceManagementSystemModel.YearMaster" Width="1.5" PointX="6" PointY="33.75" IsExpanded="true" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_Student_AcedemicYearMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="AttendenceManagementSystemModel.FK_StudentAttendenceCount_AcedemicYearMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_BranchMaster_CollegeMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_StandardMaster_BranchMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_Student_BranchMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_SubjectMaster_BranchMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="AttendenceManagementSystemModel.FK_TeachersAttendence_BranchMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_UserDetailsMaster_BranchMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_DeparmentMaster_CollegeMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_PeriodMaster_CollegeMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_Student_CollegeMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_StudentAttendence_CollegeMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_StudentAttendenceCount_CollegeMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="AttendenceManagementSystemModel.FK_TeachersAttendence_CollegeMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_UserDetailsMaster_CollegeMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_DistrictMaster_CountryMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_StateMaster_CountryMaster" ManuallyRouted="false" />
@@ -49,6 +52,7 @@
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_Student_DeparmentMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_StudentAttendenceCount_DeparmentMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_SubjectMaster_DeparmentMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="AttendenceManagementSystemModel.FK_TeachersAttendence_DeparmentMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_UserDetailsMaster_DeparmentMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_DistrictMaster_StateMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_Student_DistrictMaster" ManuallyRouted="false" />
@@ -61,14 +65,17 @@
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_StandardMaster_SectionMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_Student_SectionMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_SubjectMaster_SectionMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="AttendenceManagementSystemModel.FK_TeachersAttendence_SectionMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_UserDetailsMaster_SectionMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_StudentAttendence_StandardMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_SubjectMaster_StandardMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="AttendenceManagementSystemModel.FK_UserDetailsMaster_StateMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_Student_YearMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_StudentAttendence_Student" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_StudentAttendenceCount_Student" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_StudentAttendence_SubjectMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_StudentAttendenceCount_SubjectMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="AttendenceManagementSystemModel.FK_TeachersAttendence_UserDetailsMaster" ManuallyRouted="false" />
         <AssociationConnector Association="AttendenceManagementSystemModel.FK_UserCredential_UserDetailsMaster" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

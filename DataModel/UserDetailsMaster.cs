@@ -17,6 +17,7 @@ namespace DataModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public UserDetailsMaster()
         {
+            this.TeachersAttendences = new HashSet<TeachersAttendence>();
             this.UserCredentials = new HashSet<UserCredential>();
         }
     
@@ -41,8 +42,8 @@ namespace DataModel
         public Nullable<System.DateTime> EntryDate { get; set; }
         public Nullable<int> ModifyBy { get; set; }
         public Nullable<System.DateTime> ModifyDate { get; set; }
-        public Nullable<int> Gender { get; set; }
-        public Nullable<int> EduQualification { get; set; }
+        public Nullable<bool> Gender { get; set; }
+        public string EduQualification { get; set; }
     
         public virtual BranchMaster BranchMaster { get; set; }
         public virtual CollegeMaster CollegeMaster { get; set; }
@@ -51,6 +52,9 @@ namespace DataModel
         public virtual DistrictMaster DistrictMaster { get; set; }
         public virtual RoleMaster RoleMaster { get; set; }
         public virtual SectionMaster SectionMaster { get; set; }
+        public virtual StateMaster StateMaster { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TeachersAttendence> TeachersAttendences { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserCredential> UserCredentials { get; set; }
     }

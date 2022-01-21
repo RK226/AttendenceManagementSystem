@@ -10,8 +10,7 @@
     <link href="../../Content/custom.css" rel="stylesheet" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - K.S.K.W.College Nashik</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    
 </head>
 
 
@@ -44,16 +43,19 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-md-4 col-lg-offset-4">
+
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         <div class="form-group">
                             <label for="">Branch Name<span style="color: red"> * </span></label>
                             @Html.EditorFor(model => model.BranchName, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.BranchName, "", new { @class = "text-danger" })
+                            @Html.ValidationMessageFor(model => model.BranchName, null, new { @class = "text-danger" })
                         </div>
 
                         <div class="form-group">
                             <label for="">Select College<span style="color: red"> * </span></label>
-                            @Html.DropDownListFor(model => model.CollegeId, ViewBag.CollegeId as SelectList, "Select College", new { @class = "form-control" })
+                            @*@Html.DropDownList("CollegeId", null, htmlAttributes: new { @class = "form-control" })*@
+                            @Html.DropDownListFor(model => model.CollegeId, ViewBag.CollegeId as List<SelectListItem>, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.CollegeId, null, new { @class = "text-danger" })
                         </div>
 
                         <div class="form-group pull-right">

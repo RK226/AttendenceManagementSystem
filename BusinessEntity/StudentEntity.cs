@@ -59,4 +59,10 @@ namespace BusinessEntity
         public virtual StateMasterEntity StateMasterEntity { get; set; }
         public virtual YearMasterEntity YearMaster { get; set; }
     }
+
+    //public class Enumerations
+    //{
+    //    Male=1,
+    //    Female=2
+    //}
 }

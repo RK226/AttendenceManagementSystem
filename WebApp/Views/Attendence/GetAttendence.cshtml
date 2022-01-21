@@ -1,0 +1,91 @@
+﻿@model DataModel.StudentAttendence
+@{
+    ViewBag.Title = "GetAttlendence";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <meta charset="utf-8" />
+    <link href="../../Content/custom.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - K.S.K.W.College Nashik</title>
+</head>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="container-fluid" style="background: #fff">
+        <div style="margin-top: 5px">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="../../DashBoard.aspx"><span class="glyphicon glyphicon-home" style=" margin-inline-end: 11px; "></span>HOME</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="~/UserDetailsMasters/Index"><span class="glyphicon glyphicon-list-alt" style=" margin-inline-end: 11px;"></span>Student Attendence</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <strong><span class="glyphicon glyphicon-edit" style=" margin-inline-end: 11px;"></span>Student Attendence</strong>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="panel panel-info" style="margin-top: 0px; ">
+            <div class="tbl-header"><span class="glyphicon glyphicon-lock" style=" margin-inline-end: 11px; "></span>Student Attendence</div>
+
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="">Select College<span style="color: red"> * </span></label>
+                            @Html.DropDownList("CollegeID", null, htmlAttributes: new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label for="">Select Division<span style="color: red"> * </span></label>
+                            @Html.DropDownList("DivisionId", null, htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="">Select Section<span style="color: red"> * </span></label>
+                            @Html.DropDownList("SectionId", null, htmlAttributes: new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label for="">Select Subject<span style="color: red"> * </span></label>
+                            @Html.DropDownList("SubjectId", null, htmlAttributes: new { @class = "form-control" })
+                        </div>
+
+                    </div>
+                    <div class="col-md-3">
+
+                        <div class="form-group">
+                            <label for="">Select Branch<span style="color: red"> * </span></label>
+                            @Html.DropDownList("BranchId", null, htmlAttributes: new { @class = "form-control" })
+                        </div>
+                      
+
+                    </div>
+                    <div class="col-md-3">
+
+                        <div class="form-group">
+                            <label for="">Select Standard<span style="color: red"> * </span></label>
+                            @Html.DropDownList("StandardId", null, htmlAttributes: new { @class = "form-control" })
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="pull-right" style="font-size:xx-large; margin-right:100px">
+                    <input type="submit" value="Get Attendence" class="btn btn-primary btn-sm btn-block" />
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -75,6 +75,20 @@ namespace BusinessServices.BusinessServices
             return lstStudent;
         }
 
+        public IEnumerable<StudentEntity> GetAttendence(int collegeId, int standardId, int divisionId,int sectionId)
+        {
+            List<StudentEntity> lstStudent = new List<StudentEntity>();
+            var students = _context.Students.Where(x => x.CollegeId == collegeId && x.StandardId == standardId && x.DivisionId == divisionId && x.SectionId == sectionId).ToList();
+            if (students.Any())
+            {
+                lstStudent = Mapping(students);
+                if (lstStudent.Count > 0)
+                    return lstStudent;
+                return lstStudent;
+            }
+            return lstStudent;
+        }
+
         public bool UpdateStudent(StudentEntity studentEntity)
         {
             var success = false;
@@ -174,7 +188,37 @@ namespace BusinessServices.BusinessServices
                 objStudent.EntryBy = item.EntryBy;
                 objStudent.EntryDate = item.EntryDate;
 
+                DeparmentMaster deparmentMaster = item.DeparmentMaster;
+                if (deparmentMaster != null)
+                {
+                    DeparmentMasterEntity objDepartment = new DeparmentMasterEntity();
+                    objDepartment.Id = deparmentMaster.Id;
+                    objDepartment.DepartmentName = deparmentMaster.DepartmentName;
 
+                    objStudent.DeparmentMaster = objDepartment;
+                }
+
+                CountryMaster countryMaster = item.CountryMaster;
+                if (countryMaster != null)
+                {
+                    CountryMasterEntity countryMasterEntity = new CountryMasterEntity();
+                    countryMasterEntity.Id = countryMaster.Id;
+                    countryMasterEntity.CountryName = countryMaster.CountryName;
+
+                    objStudent.CountryMaster = countryMasterEntity;
+                }
+
+                DivisionMaster divisionMaster = item.DivisionMaster;
+                if (divisionMaster != null)
+                {
+                    DivisionMasterEntity divisionMasterEntity = new DivisionMasterEntity();
+                    divisionMasterEntity.Id = divisionMaster.Id;
+                    divisionMasterEntity.DivisionName = divisionMaster.DivisionName;
+
+                    objStudent.DivisionMaster = divisionMasterEntity;
+
+                }
+                
                 lstStudent.Add(objStudent);
             }
             return lstStudent;

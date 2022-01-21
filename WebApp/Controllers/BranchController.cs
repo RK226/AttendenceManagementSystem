@@ -51,10 +51,14 @@ namespace WebApp.Controllers
         [HttpPost]
         public ActionResult CreateBranch(BranchMasterEntity branchMasterEntity)
         {
-            List<BranchMasterEntity> lstBranchs = new List<BranchMasterEntity>();
-            var branch = _branchMasterServices.CreateBranch(branchMasterEntity);
-            lstBranchs.Add(branch);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                List<BranchMasterEntity> lstBranchs = new List<BranchMasterEntity>();
+                var branch = _branchMasterServices.CreateBranch(branchMasterEntity);
+                lstBranchs.Add(branch);
+                return RedirectToAction("Index");
+            }
+               
             return View();
         }
 

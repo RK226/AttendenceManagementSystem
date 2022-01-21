@@ -23,13 +23,13 @@
         <div style="margin-top: 5px">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="../../DashBoard.aspx"><span class="fa fa-home"></span>HOME</a>
+                    <a href="../../DashBoard.aspx"><span class="glyphicon glyphicon-home" style=" margin-inline-end: 11px; "></span>HOME</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a><span class="fa fa-print"></span>College List</a>
+                    <a href="~/College/Index"><span class="glyphicon glyphicon-list-alt" style=" margin-inline-end: 11px;"></span>College List</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    <strong>Create College</strong>
+                    <strong><span class="glyphicon glyphicon-edit" style=" margin-inline-end: 11px;"></span>Create College</strong>
                 </li>
             </ol>
         </div>
@@ -37,7 +37,7 @@
 
     <div class="container">
         <div class="panel panel-info" style="margin-top: 0px; ">
-            <div class="tbl-header">Country Master</div>
+            <div class="tbl-header"><span class="glyphicon glyphicon-lock" style=" margin-inline-end: 11px; "></span>College Master</div>
 
             <div class="panel-body">
                 <div class="row">
@@ -103,8 +103,7 @@
                         <div>
                             @*class="form-group">*@
                             <label for="">Status<span style="color: red"> * </span></label>
-                            @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                            @Html.DropDownListFor(model => model.Status, ViewBag.Status as SelectList, "Select Status", new { @class = "form-control" })
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -122,10 +121,10 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="form-group pull-right">
-                    <input type="submit" value="Create" class="btn btn-success" />
+                <div class="pull-right" style="font-size:xx-large; margin-right:100px">
+                    <input type="submit" value="Create" class="btn btn-primary btn-sm btn-block" />
                 </div>
+               
             </div>
         </div>
     </div>

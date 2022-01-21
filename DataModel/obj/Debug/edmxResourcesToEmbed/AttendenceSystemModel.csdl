@@ -7,6 +7,7 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="AcedemicYear" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Students" Relationship="Self.FK_Student_AcedemicYearMaster" FromRole="AcedemicYearMaster" ToRole="Student" />
+    <NavigationProperty Name="StudentAttendenceCounts" Relationship="Self.FK_StudentAttendenceCount_AcedemicYearMaster" FromRole="AcedemicYearMaster" ToRole="StudentAttendenceCount" />
   </EntityType>
   <EntityType Name="BranchMaster">
     <Key>
@@ -23,6 +24,7 @@
     <NavigationProperty Name="StandardMasters" Relationship="Self.FK_StandardMaster_BranchMaster" FromRole="BranchMaster" ToRole="StandardMaster" />
     <NavigationProperty Name="Students" Relationship="Self.FK_Student_BranchMaster" FromRole="BranchMaster" ToRole="Student" />
     <NavigationProperty Name="SubjectMasters" Relationship="Self.FK_SubjectMaster_BranchMaster" FromRole="BranchMaster" ToRole="SubjectMaster" />
+    <NavigationProperty Name="TeachersAttendences" Relationship="Self.FK_TeachersAttendence_BranchMaster" FromRole="BranchMaster" ToRole="TeachersAttendence" />
     <NavigationProperty Name="UserDetailsMasters" Relationship="Self.FK_UserDetailsMaster_BranchMaster" FromRole="BranchMaster" ToRole="UserDetailsMaster" />
   </EntityType>
   <EntityType Name="CollegeMaster">
@@ -53,6 +55,7 @@
     <NavigationProperty Name="Students" Relationship="Self.FK_Student_CollegeMaster" FromRole="CollegeMaster" ToRole="Student" />
     <NavigationProperty Name="StudentAttendences" Relationship="Self.FK_StudentAttendence_CollegeMaster" FromRole="CollegeMaster" ToRole="StudentAttendence" />
     <NavigationProperty Name="StudentAttendenceCounts" Relationship="Self.FK_StudentAttendenceCount_CollegeMaster" FromRole="CollegeMaster" ToRole="StudentAttendenceCount" />
+    <NavigationProperty Name="TeachersAttendences" Relationship="Self.FK_TeachersAttendence_CollegeMaster" FromRole="CollegeMaster" ToRole="TeachersAttendence" />
     <NavigationProperty Name="UserDetailsMasters" Relationship="Self.FK_UserDetailsMaster_CollegeMaster" FromRole="CollegeMaster" ToRole="UserDetailsMaster" />
   </EntityType>
   <EntityType Name="CountryMaster">
@@ -90,6 +93,7 @@
     <NavigationProperty Name="Students" Relationship="Self.FK_Student_DeparmentMaster" FromRole="DeparmentMaster" ToRole="Student" />
     <NavigationProperty Name="StudentAttendenceCounts" Relationship="Self.FK_StudentAttendenceCount_DeparmentMaster" FromRole="DeparmentMaster" ToRole="StudentAttendenceCount" />
     <NavigationProperty Name="SubjectMasters" Relationship="Self.FK_SubjectMaster_DeparmentMaster" FromRole="DeparmentMaster" ToRole="SubjectMaster" />
+    <NavigationProperty Name="TeachersAttendences" Relationship="Self.FK_TeachersAttendence_DeparmentMaster" FromRole="DeparmentMaster" ToRole="TeachersAttendence" />
     <NavigationProperty Name="UserDetailsMasters" Relationship="Self.FK_UserDetailsMaster_DeparmentMaster" FromRole="DeparmentMaster" ToRole="UserDetailsMaster" />
   </EntityType>
   <EntityType Name="DistrictMaster">
@@ -180,6 +184,7 @@
     <NavigationProperty Name="StandardMasters" Relationship="Self.FK_StandardMaster_SectionMaster" FromRole="SectionMaster" ToRole="StandardMaster" />
     <NavigationProperty Name="Students" Relationship="Self.FK_Student_SectionMaster" FromRole="SectionMaster" ToRole="Student" />
     <NavigationProperty Name="SubjectMasters" Relationship="Self.FK_SubjectMaster_SectionMaster" FromRole="SectionMaster" ToRole="SubjectMaster" />
+    <NavigationProperty Name="TeachersAttendences" Relationship="Self.FK_TeachersAttendence_SectionMaster" FromRole="SectionMaster" ToRole="TeachersAttendence" />
     <NavigationProperty Name="UserDetailsMasters" Relationship="Self.FK_UserDetailsMaster_SectionMaster" FromRole="SectionMaster" ToRole="UserDetailsMaster" />
   </EntityType>
   <EntityType Name="StandardMaster">
@@ -212,6 +217,7 @@
     <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
     <NavigationProperty Name="CountryMaster" Relationship="Self.FK_StateMaster_CountryMaster" FromRole="StateMaster" ToRole="CountryMaster" />
     <NavigationProperty Name="DistrictMasters" Relationship="Self.FK_DistrictMaster_StateMaster" FromRole="StateMaster" ToRole="DistrictMaster" />
+    <NavigationProperty Name="UserDetailsMasters" Relationship="Self.FK_UserDetailsMaster_StateMaster" FromRole="StateMaster" ToRole="UserDetailsMaster" />
   </EntityType>
   <EntityType Name="Student">
     <Key>
@@ -269,8 +275,8 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" />
-    <Property Name="CollegeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CollegeID" Type="Int32" Nullable="false" />
     <Property Name="StudentID" Type="Int32" Nullable="false" />
     <Property Name="SubjectId" Type="Int32" Nullable="false" />
     <Property Name="StandardID" Type="Int32" Nullable="false" />
@@ -290,14 +296,14 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="AcademicYearId" Type="Int32" Nullable="false" />
     <Property Name="DeparmentId" Type="Int32" Nullable="false" />
     <Property Name="StudentId" Type="Int32" Nullable="false" />
     <Property Name="SubjectId" Type="Int32" Nullable="false" />
     <Property Name="CollegelId" Type="Int32" Nullable="false" />
     <Property Name="June" Type="Int32" />
-    <Property Name="July" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="July" Type="Int32" Nullable="false" />
     <Property Name="August" Type="Int32" />
     <Property Name="September" Type="Int32" />
     <Property Name="October" Type="Int32" />
@@ -312,6 +318,7 @@
     <Property Name="EntryDate" Type="DateTime" Precision="3" />
     <Property Name="Modifyby" Type="Int32" />
     <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="AcedemicYearMaster" Relationship="Self.FK_StudentAttendenceCount_AcedemicYearMaster" FromRole="StudentAttendenceCount" ToRole="AcedemicYearMaster" />
     <NavigationProperty Name="CollegeMaster" Relationship="Self.FK_StudentAttendenceCount_CollegeMaster" FromRole="StudentAttendenceCount" ToRole="CollegeMaster" />
     <NavigationProperty Name="DeparmentMaster" Relationship="Self.FK_StudentAttendenceCount_DeparmentMaster" FromRole="StudentAttendenceCount" ToRole="DeparmentMaster" />
     <NavigationProperty Name="Student" Relationship="Self.FK_StudentAttendenceCount_Student" FromRole="StudentAttendenceCount" ToRole="Student" />
@@ -356,6 +363,7 @@
     <Property Name="Id" Type="Int32" Nullable="false" />
     <Property Name="DepartmentId" Type="Int32" />
     <Property Name="SectionId" Type="Int32" />
+    <Property Name="CollegeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="BranchId" Type="Int32" />
     <Property Name="UserId" Type="Int32" />
     <Property Name="Status" Type="Boolean" />
@@ -363,6 +371,11 @@
     <Property Name="EntryDate" Type="DateTime" Precision="3" />
     <Property Name="ModifyBy" Type="Int32" />
     <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="BranchMaster" Relationship="Self.FK_TeachersAttendence_BranchMaster" FromRole="TeachersAttendence" ToRole="BranchMaster" />
+    <NavigationProperty Name="CollegeMaster" Relationship="Self.FK_TeachersAttendence_CollegeMaster" FromRole="TeachersAttendence" ToRole="CollegeMaster" />
+    <NavigationProperty Name="DeparmentMaster" Relationship="Self.FK_TeachersAttendence_DeparmentMaster" FromRole="TeachersAttendence" ToRole="DeparmentMaster" />
+    <NavigationProperty Name="SectionMaster" Relationship="Self.FK_TeachersAttendence_SectionMaster" FromRole="TeachersAttendence" ToRole="SectionMaster" />
+    <NavigationProperty Name="UserDetailsMaster" Relationship="Self.FK_TeachersAttendence_UserDetailsMaster" FromRole="TeachersAttendence" ToRole="UserDetailsMaster" />
   </EntityType>
   <EntityType Name="UserCredential">
     <Key>
@@ -373,8 +386,8 @@
     <Property Name="UserID" Type="Int32" />
     <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Flag" Type="Int32" />
-    <Property Name="EmailFlag" Type="Int32" />
+    <Property Name="Flag" Type="Boolean" />
+    <Property Name="EmailFlag" Type="Boolean" />
     <Property Name="EmailSentOn" Type="DateTime" Precision="3" />
     <Property Name="IP_ADDRESS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="LAST_lOGIN" Type="DateTime" Precision="3" />
@@ -408,8 +421,8 @@
     <Property Name="EntryDate" Type="DateTime" Precision="3" />
     <Property Name="ModifyBy" Type="Int32" />
     <Property Name="ModifyDate" Type="DateTime" Precision="3" />
-    <Property Name="Gender" Type="Int32" />
-    <Property Name="EduQualification" Type="Int32" />
+    <Property Name="Gender" Type="Boolean" />
+    <Property Name="EduQualification" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="BranchMaster" Relationship="Self.FK_UserDetailsMaster_BranchMaster" FromRole="UserDetailsMaster" ToRole="BranchMaster" />
     <NavigationProperty Name="CollegeMaster" Relationship="Self.FK_UserDetailsMaster_CollegeMaster" FromRole="UserDetailsMaster" ToRole="CollegeMaster" />
     <NavigationProperty Name="CountryMaster" Relationship="Self.FK_UserDetailsMaster_CountryMaster" FromRole="UserDetailsMaster" ToRole="CountryMaster" />
@@ -417,6 +430,8 @@
     <NavigationProperty Name="DistrictMaster" Relationship="Self.FK_UserDetailsMaster_DistrictMaster" FromRole="UserDetailsMaster" ToRole="DistrictMaster" />
     <NavigationProperty Name="RoleMaster" Relationship="Self.FK_UserDetailsMaster_RoleMaster" FromRole="UserDetailsMaster" ToRole="RoleMaster" />
     <NavigationProperty Name="SectionMaster" Relationship="Self.FK_UserDetailsMaster_SectionMaster" FromRole="UserDetailsMaster" ToRole="SectionMaster" />
+    <NavigationProperty Name="StateMaster" Relationship="Self.FK_UserDetailsMaster_StateMaster" FromRole="UserDetailsMaster" ToRole="StateMaster" />
+    <NavigationProperty Name="TeachersAttendences" Relationship="Self.FK_TeachersAttendence_UserDetailsMaster" FromRole="UserDetailsMaster" ToRole="TeachersAttendence" />
     <NavigationProperty Name="UserCredentials" Relationship="Self.FK_UserCredential_UserDetailsMaster" FromRole="UserDetailsMaster" ToRole="UserCredential" />
   </EntityType>
   <EntityType Name="YearMaster">
@@ -435,6 +450,18 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Student">
+        <PropertyRef Name="AcademicYearId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentAttendenceCount_AcedemicYearMaster">
+    <End Role="AcedemicYearMaster" Type="Self.AcedemicYearMaster" Multiplicity="1" />
+    <End Role="StudentAttendenceCount" Type="Self.StudentAttendenceCount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AcedemicYearMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudentAttendenceCount">
         <PropertyRef Name="AcademicYearId" />
       </Dependent>
     </ReferentialConstraint>
@@ -483,6 +510,18 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="SubjectMaster">
+        <PropertyRef Name="BranchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TeachersAttendence_BranchMaster">
+    <End Role="BranchMaster" Type="Self.BranchMaster" Multiplicity="0..1" />
+    <End Role="TeachersAttendence" Type="Self.TeachersAttendence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BranchMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TeachersAttendence">
         <PropertyRef Name="BranchId" />
       </Dependent>
     </ReferentialConstraint>
@@ -556,6 +595,18 @@
       </Principal>
       <Dependent Role="StudentAttendenceCount">
         <PropertyRef Name="CollegelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TeachersAttendence_CollegeMaster">
+    <End Role="CollegeMaster" Type="Self.CollegeMaster" Multiplicity="1" />
+    <End Role="TeachersAttendence" Type="Self.TeachersAttendence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CollegeMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TeachersAttendence">
+        <PropertyRef Name="CollegeId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -687,6 +738,18 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="SubjectMaster">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TeachersAttendence_DeparmentMaster">
+    <End Role="DeparmentMaster" Type="Self.DeparmentMaster" Multiplicity="0..1" />
+    <End Role="TeachersAttendence" Type="Self.TeachersAttendence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeparmentMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TeachersAttendence">
         <PropertyRef Name="DepartmentId" />
       </Dependent>
     </ReferentialConstraint>
@@ -835,6 +898,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_TeachersAttendence_SectionMaster">
+    <End Role="SectionMaster" Type="Self.SectionMaster" Multiplicity="0..1" />
+    <End Role="TeachersAttendence" Type="Self.TeachersAttendence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SectionMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TeachersAttendence">
+        <PropertyRef Name="SectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_UserDetailsMaster_SectionMaster">
     <End Role="SectionMaster" Type="Self.SectionMaster" Multiplicity="0..1" />
     <End Role="UserDetailsMaster" Type="Self.UserDetailsMaster" Multiplicity="*" />
@@ -868,6 +943,18 @@
       </Principal>
       <Dependent Role="SubjectMaster">
         <PropertyRef Name="StandardId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDetailsMaster_StateMaster">
+    <End Role="StateMaster" Type="Self.StateMaster" Multiplicity="0..1" />
+    <End Role="UserDetailsMaster" Type="Self.UserDetailsMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StateMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDetailsMaster">
+        <PropertyRef Name="StateId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -931,6 +1018,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_TeachersAttendence_UserDetailsMaster">
+    <End Role="UserDetailsMaster" Type="Self.UserDetailsMaster" Multiplicity="0..1" />
+    <End Role="TeachersAttendence" Type="Self.TeachersAttendence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetailsMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TeachersAttendence">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_UserCredential_UserDetailsMaster">
     <End Role="UserDetailsMaster" Type="Self.UserDetailsMaster" Multiplicity="0..1" />
     <End Role="UserCredential" Type="Self.UserCredential" Multiplicity="*" />
@@ -970,6 +1069,10 @@
       <End Role="AcedemicYearMaster" EntitySet="AcedemicYearMasters" />
       <End Role="Student" EntitySet="Students" />
     </AssociationSet>
+    <AssociationSet Name="FK_StudentAttendenceCount_AcedemicYearMaster" Association="Self.FK_StudentAttendenceCount_AcedemicYearMaster">
+      <End Role="AcedemicYearMaster" EntitySet="AcedemicYearMasters" />
+      <End Role="StudentAttendenceCount" EntitySet="StudentAttendenceCounts" />
+    </AssociationSet>
     <AssociationSet Name="FK_BranchMaster_CollegeMaster" Association="Self.FK_BranchMaster_CollegeMaster">
       <End Role="CollegeMaster" EntitySet="CollegeMasters" />
       <End Role="BranchMaster" EntitySet="BranchMasters" />
@@ -985,6 +1088,10 @@
     <AssociationSet Name="FK_SubjectMaster_BranchMaster" Association="Self.FK_SubjectMaster_BranchMaster">
       <End Role="BranchMaster" EntitySet="BranchMasters" />
       <End Role="SubjectMaster" EntitySet="SubjectMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TeachersAttendence_BranchMaster" Association="Self.FK_TeachersAttendence_BranchMaster">
+      <End Role="BranchMaster" EntitySet="BranchMasters" />
+      <End Role="TeachersAttendence" EntitySet="TeachersAttendences" />
     </AssociationSet>
     <AssociationSet Name="FK_UserDetailsMaster_BranchMaster" Association="Self.FK_UserDetailsMaster_BranchMaster">
       <End Role="BranchMaster" EntitySet="BranchMasters" />
@@ -1009,6 +1116,10 @@
     <AssociationSet Name="FK_StudentAttendenceCount_CollegeMaster" Association="Self.FK_StudentAttendenceCount_CollegeMaster">
       <End Role="CollegeMaster" EntitySet="CollegeMasters" />
       <End Role="StudentAttendenceCount" EntitySet="StudentAttendenceCounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TeachersAttendence_CollegeMaster" Association="Self.FK_TeachersAttendence_CollegeMaster">
+      <End Role="CollegeMaster" EntitySet="CollegeMasters" />
+      <End Role="TeachersAttendence" EntitySet="TeachersAttendences" />
     </AssociationSet>
     <AssociationSet Name="FK_UserDetailsMaster_CollegeMaster" Association="Self.FK_UserDetailsMaster_CollegeMaster">
       <End Role="CollegeMaster" EntitySet="CollegeMasters" />
@@ -1053,6 +1164,10 @@
     <AssociationSet Name="FK_SubjectMaster_DeparmentMaster" Association="Self.FK_SubjectMaster_DeparmentMaster">
       <End Role="DeparmentMaster" EntitySet="DeparmentMasters" />
       <End Role="SubjectMaster" EntitySet="SubjectMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TeachersAttendence_DeparmentMaster" Association="Self.FK_TeachersAttendence_DeparmentMaster">
+      <End Role="DeparmentMaster" EntitySet="DeparmentMasters" />
+      <End Role="TeachersAttendence" EntitySet="TeachersAttendences" />
     </AssociationSet>
     <AssociationSet Name="FK_UserDetailsMaster_DeparmentMaster" Association="Self.FK_UserDetailsMaster_DeparmentMaster">
       <End Role="DeparmentMaster" EntitySet="DeparmentMasters" />
@@ -1102,6 +1217,10 @@
       <End Role="SectionMaster" EntitySet="SectionMasters" />
       <End Role="SubjectMaster" EntitySet="SubjectMasters" />
     </AssociationSet>
+    <AssociationSet Name="FK_TeachersAttendence_SectionMaster" Association="Self.FK_TeachersAttendence_SectionMaster">
+      <End Role="SectionMaster" EntitySet="SectionMasters" />
+      <End Role="TeachersAttendence" EntitySet="TeachersAttendences" />
+    </AssociationSet>
     <AssociationSet Name="FK_UserDetailsMaster_SectionMaster" Association="Self.FK_UserDetailsMaster_SectionMaster">
       <End Role="SectionMaster" EntitySet="SectionMasters" />
       <End Role="UserDetailsMaster" EntitySet="UserDetailsMasters" />
@@ -1113,6 +1232,10 @@
     <AssociationSet Name="FK_SubjectMaster_StandardMaster" Association="Self.FK_SubjectMaster_StandardMaster">
       <End Role="StandardMaster" EntitySet="StandardMasters" />
       <End Role="SubjectMaster" EntitySet="SubjectMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDetailsMaster_StateMaster" Association="Self.FK_UserDetailsMaster_StateMaster">
+      <End Role="StateMaster" EntitySet="StateMasters" />
+      <End Role="UserDetailsMaster" EntitySet="UserDetailsMasters" />
     </AssociationSet>
     <AssociationSet Name="FK_Student_YearMaster" Association="Self.FK_Student_YearMaster">
       <End Role="YearMaster" EntitySet="YearMasters" />
@@ -1133,6 +1256,10 @@
     <AssociationSet Name="FK_StudentAttendenceCount_SubjectMaster" Association="Self.FK_StudentAttendenceCount_SubjectMaster">
       <End Role="SubjectMaster" EntitySet="SubjectMasters" />
       <End Role="StudentAttendenceCount" EntitySet="StudentAttendenceCounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TeachersAttendence_UserDetailsMaster" Association="Self.FK_TeachersAttendence_UserDetailsMaster">
+      <End Role="UserDetailsMaster" EntitySet="UserDetailsMasters" />
+      <End Role="TeachersAttendence" EntitySet="TeachersAttendences" />
     </AssociationSet>
     <AssociationSet Name="FK_UserCredential_UserDetailsMaster" Association="Self.FK_UserCredential_UserDetailsMaster">
       <End Role="UserDetailsMaster" EntitySet="UserDetailsMasters" />

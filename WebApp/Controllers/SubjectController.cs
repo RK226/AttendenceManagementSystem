@@ -45,7 +45,7 @@ namespace WebApp.Controllers
             ViewBag.BranchId = new SelectList(_context.BranchMasters, "Id", "BranchName");
             ViewBag.DepartmentId = new SelectList(_context.DeparmentMasters, "Id", "DepartmentName");
             ViewBag.SectionId = new SelectList(_context.SectionMasters, "Id", "SectionName");
-            ViewBag.StandardId = new SelectList(_context.SectionMasters, "Id", "SectionName");
+            ViewBag.StandardId = new SelectList(_context.StandardMasters, "Id", "StandardName");
             return View();
         }
 
@@ -60,7 +60,7 @@ namespace WebApp.Controllers
             ViewBag.BranchId = new SelectList(_context.BranchMasters, "Id", "BranchName");
             ViewBag.DepartmentId = new SelectList(_context.DeparmentMasters, "Id", "DepartmentName");
             ViewBag.SectionId = new SelectList(_context.SectionMasters, "Id", "SectionName");
-            ViewBag.StandardId = new SelectList(_context.SectionMasters, "Id", "SectionName");
+            ViewBag.StandardId = new SelectList(_context.StandardMasters, "Id", "StandardName");
             return View();
         }
 
@@ -80,7 +80,7 @@ namespace WebApp.Controllers
             ViewBag.DepartmentId = new SelectList(_context.CountryMasters, "Id", "CountryName", subject.DepartmentId);
             ViewBag.DepartmentId = new SelectList(_context.DeparmentMasters, "Id", "DepartmentName", subject.DepartmentId);
             ViewBag.SectionId = new SelectList(_context.SectionMasters, "Id", "SectionName", subject.SectionId);
-            ViewBag.StandardId = new SelectList(_context.SectionMasters, "Id", "SectionName", subject.StandardId);
+            ViewBag.StandardId = new SelectList(_context.StandardMasters, "Id", "StandardName", subject.StandardId);
             return View(subject);
         }
 

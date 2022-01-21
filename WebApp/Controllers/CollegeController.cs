@@ -7,6 +7,7 @@ using System.Net;
 using System.Web.Mvc;
 using Services;
 using BusinessServices.BusinessInterface;
+using System;
 
 namespace WebApp.Controllers
 {
@@ -46,6 +47,7 @@ namespace WebApp.Controllers
         {
             ViewBag.DistrictId = new SelectList(_context.DistrictMasters, "Id", "DistrictName");
             ViewBag.StateId = new SelectList(_context.StateMasters, "Id", "StateName");
+            ViewBag.Status = new SelectList(Enum.GetValues(typeof(Enumerations.Status)));
             ViewBag.CountryId = new SelectList(_context.CountryMasters, "Id", "CountryName");
             return View();
         }

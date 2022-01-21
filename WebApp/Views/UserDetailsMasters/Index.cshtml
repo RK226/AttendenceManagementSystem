@@ -1,0 +1,115 @@
+﻿@model IEnumerable<BusinessEntity.UserDetailsMasterEntity>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link href="../../Content/custom.css" rel="stylesheet" type="text/css" />
+</head>
+
+<div class="container">
+    <div class="navbar-header" style="margin-top: 22px; margin-bottom: 33px; ">
+        @Html.ActionLink("Create New", "Create", new { area = "" }, new { @class = "btn btn-primary btn-lg" })
+    </div>
+</div>
+
+
+<div class="tbl-header">User Details Master</div>
+<br />
+<table id="table">
+    <tr class="head">
+        <th>
+            Id
+        </th>
+        <th>
+            Role
+        </th>
+        <th>
+            FullName
+        </th>
+        <th>Department</th>
+        <th>Branch</th>
+
+        <th>
+            Gender
+        </th>
+        <th>
+            Qualification
+        </th>
+
+
+        <th>
+            Mobile Number
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Status
+        </th>
+
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UniqueId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoleID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeparmentMaster.DepartmentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BranchMaster.BranchName)
+            </td>
+            <td>
+                @if (item.Gender == true)
+                {
+                    <p>Male </p>
+                }
+                else
+                {
+                    <p>Female </p>
+
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EduQualification)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.MobileNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailID)
+            </td>
+            <td>
+                @if (item.Status == true)
+                {
+                    <p>Active </p>
+                }
+                else
+                {
+                    <p>InActive </p>
+
+                }
+            </td>
+
+
+            <td>
+                <a href='@Url.Action("Edit", "UserDetailsMasters",new { id = item.Id })' class="btn btn-primary">EDIT</a>
+                <a href='@Url.Action("Delete", "UserDetailsMasters",new { id = item.Id })' class="btn btn-danger">DELETE</a>
+            </td>
+        </tr>
+    }
+
+</table>

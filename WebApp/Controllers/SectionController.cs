@@ -53,10 +53,13 @@ namespace WebApp.Controllers
         [HttpPost]
         public ActionResult CreateSection(SectionEntity sectionEntity)
         {
-            List<SectionEntity> lstSection = new List<SectionEntity>();
-            var section = _sectionMasterServices.CreateSection(sectionEntity);
-            lstSection.Add(section);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                List<SectionEntity> lstSection = new List<SectionEntity>();
+                var section = _sectionMasterServices.CreateSection(sectionEntity);
+                lstSection.Add(section);
+                return RedirectToAction("Index");
+            }
             return View();
 
             //var districtList = _context.DistrictMasters.ToList();

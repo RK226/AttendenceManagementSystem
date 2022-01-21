@@ -36,19 +36,25 @@
     }
 
     #table tr:hover {
-        background-color: crimson;
+        background-color: dimgray; /*crimson;*/
     }
 
+a span .glyphicon {
+    transition: all 0.3s linear;
+}
 
+a:hover span {
+    transform: scale(1.5);
+    color:Background;
+}
 
-
-    #country th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-        background-color: #04AA6D;
-        color: white;
-    }
+#country th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
 
     /*
         Create Form
@@ -64,4 +70,12 @@
 
 .container .panel-title  {
     background-color: #2e6da4;
+}
+
+.container .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border: 3px solid green;
 }

@@ -18,6 +18,7 @@ namespace DataModel
         public StateMaster()
         {
             this.DistrictMasters = new HashSet<DistrictMaster>();
+            this.UserDetailsMasters = new HashSet<UserDetailsMaster>();
         }
     
         public int Id { get; set; }
@@ -31,5 +32,7 @@ namespace DataModel
         public virtual CountryMaster CountryMaster { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DistrictMaster> DistrictMasters { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserDetailsMaster> UserDetailsMasters { get; set; }
     }
 }

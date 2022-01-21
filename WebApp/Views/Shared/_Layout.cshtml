@@ -4,7 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - K.S.K.W.College Nashik</title>
-    @Styles.Render("~/Content/css")
+
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    @Styles.Render("~/Content/bootstrap-datetimepicker.css")
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />*@
+    @*@Styles.Render("~/Content/css")*@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
@@ -17,7 +25,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("K.S.K.W.College,Nashik", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @*@Html.ActionLink("K.S.K.W.College,Nashik", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -30,6 +38,8 @@
                     <li><a href="~/Country/Index">Country</a></li>
                     <li><a href="~/Student/Index">Student</a></li>
                     <li><a href="~/Subject/Index">Subject</a></li>
+                    <li><a href="~/StandardMasters/Index">Standard</a></li>
+                    <li><a href="~/UserDetailsMasters/Index">User Details Master</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>@Html.ActionLink("Login", "Login", "Home")</li>
@@ -38,7 +48,7 @@
             </div>
         </div>
     </div>
-   
+
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -46,9 +56,13 @@
             <p>&copy; @DateTime.Now.Year - K.S.K.W.College Nashik</p>
         </footer>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    @*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>*@
+    <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+    <script src="~/Scripts/moment.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+    <script src="~/Scripts/Custome.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -21,23 +21,25 @@
 <table id="table">
     <tr class="head">
         <th>
-            @Html.DisplayNameFor(model => model.Section.SectionName)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.SubjectNo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BranchId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DepartmentId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.SubjectName)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Section.SectionName)
+        </th>
 
         <th>
-            @Html.DisplayNameFor(model => model.StandardId)
+            @Html.DisplayNameFor(model => model.BranchMaster.BranchName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeparmentMaster.DepartmentName)
+        </th>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.StandardMaster.StandardName)
         </th>
 
         <th></th>
@@ -47,23 +49,25 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Section.SectionName)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.SubjectNo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BranchId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DepartmentId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SubjectName)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Section.SectionName)
+            </td>
 
             <td>
-                @Html.DisplayFor(modelItem => item.StandardId)
+                @Html.DisplayFor(modelItem => item.BranchMaster.BranchName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeparmentMaster.DepartmentName)
+            </td>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.StandardMaster.StandardName)
             </td>
 
             <td>

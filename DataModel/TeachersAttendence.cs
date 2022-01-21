@@ -17,6 +17,7 @@ namespace DataModel
         public int Id { get; set; }
         public Nullable<int> DepartmentId { get; set; }
         public Nullable<int> SectionId { get; set; }
+        public int CollegeId { get; set; }
         public Nullable<int> BranchId { get; set; }
         public Nullable<int> UserId { get; set; }
         public Nullable<bool> Status { get; set; }
@@ -24,5 +25,11 @@ namespace DataModel
         public Nullable<System.DateTime> EntryDate { get; set; }
         public Nullable<int> ModifyBy { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
+    
+        public virtual BranchMaster BranchMaster { get; set; }
+        public virtual CollegeMaster CollegeMaster { get; set; }
+        public virtual DeparmentMaster DeparmentMaster { get; set; }
+        public virtual SectionMaster SectionMaster { get; set; }
+        public virtual UserDetailsMaster UserDetailsMaster { get; set; }
     }
 }

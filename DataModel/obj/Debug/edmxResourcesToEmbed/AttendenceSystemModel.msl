@@ -299,6 +299,7 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
           <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+          <ScalarProperty Name="CollegeId" ColumnName="CollegeId" />
           <ScalarProperty Name="BranchId" ColumnName="BranchId" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="Status" ColumnName="Status" />

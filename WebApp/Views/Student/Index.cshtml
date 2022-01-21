@@ -14,16 +14,18 @@
     </div>
 </div>
 
-<div class="tbl-header">Studnet Master</div>
+<div class="tbl-header"><span class="glyphicon glyphicon-user" style=" margin-inline-end: 11px; "></span>Studnet Master</div><br />
 <table id="table">
     <tr class="head">
         <th>
             @Html.DisplayNameFor(model => model.URNNo)
         </th>
         <th>
+          
             @Html.DisplayNameFor(model => model.RollNo)
         </th>
         <th>
+           
             @Html.DisplayNameFor(model => model.Gender)
         </th>
         <th>
@@ -42,7 +44,7 @@
             @Html.DisplayNameFor(model => model.Taluka)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CountryId)
+            @Html.DisplayNameFor(model => model.CountryMaster.CountryName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Flag)
@@ -52,11 +54,9 @@
         </th>
 
         <th>
-            @Html.DisplayNameFor(model => model.DivisionMaster.DivisionName)
+            <p>Division </p>
         </th>
-        <th>
-            <label for="action">Action</label>
-        </th>
+        <th>Actions</th>
     </tr>
 
     @foreach (var item in Model)
@@ -69,7 +69,15 @@
                 @Html.DisplayFor(modelItem => item.RollNo)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Gender)
+                @if (item.Gender == true)
+                {
+                    <p>Male </p>
+                }
+                else
+                {
+            <p>Female </p>
+                    
+                }
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.StudentName)
@@ -88,10 +96,18 @@
                 @Html.DisplayFor(modelItem => item.Taluka)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CountryId)
+                @Html.DisplayFor(modelItem => item.CountryMaster.CountryName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Flag)
+                @if (item.Flag == 1)
+                {
+                    <p>Active </p>
+                }
+                else
+                {
+                    <p>InActive </p>
+
+                }
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DeparmentMaster.DepartmentName)
@@ -100,9 +116,10 @@
                 @Html.DisplayFor(modelItem => item.DivisionMaster.DivisionName)
             </td>
             <td>
-                <a href='@Url.Action("Edit", "Edit",new { id = item.Id })' class="btn btn-primary">EDIT</a>
-                <a href='@Url.Action("Delete", "Delete",new { id = item.Id })' class="btn btn-danger">DELETE</a>
-              
+                
+                <a href='@Url.Action("Edit", "Student",new { id = item.Id })' ><span class="glyphicon glyphicon-pencil" style="color: green; font-size: 14px; margin-inline: 9px; "></span></a>
+                <a href='@Url.Action("Delete", "Delete",new { id = item.Id })' ><span class="glyphicon glyphicon-trash" style="color: red; font-size: 14px;"></span></a>
+
             </td>
         </tr>
     }

@@ -30,6 +30,8 @@ namespace WebApp
              container.RegisterType<ISectionMasterServices, SectionMasterServices>();
              container.RegisterType<IStudentServices, StudentServices>();
              container.RegisterType<ISubjectServices, SubjectServices>();
+             container.RegisterType<IUserDetailServices, UserDetailServices>();
+             container.RegisterType<IAttendenceServices, AttendenceServices>();
 
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));

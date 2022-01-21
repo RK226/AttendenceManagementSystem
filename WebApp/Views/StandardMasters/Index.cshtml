@@ -1,0 +1,54 @@
+﻿@model IEnumerable<DataModel.StandardMaster>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link href="../../Content/custom.css" rel="stylesheet" type="text/css" />
+</head>
+<div class="container">
+    <div class="navbar-header" style="margin-top: 22px; margin-bottom: 33px; ">
+        @Html.ActionLink("Create New", "CreateStandard", new { area = "" }, new { @class = "btn btn-primary btn-lg" })
+    </div>
+</div>
+
+<div class="tbl-header">Standard Master</div>
+<br />
+
+<table id="table">
+    <tr class="head">
+        <th>
+            @Html.DisplayNameFor(model => model.StandardName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.BranchMaster.BranchName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SectionMaster.SectionName)
+        </th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StandardName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BranchMaster.BranchName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SectionMaster.SectionName)
+            </td>
+            <td>
+                <a href='@Url.Action("UpdateStandard", "Edit",new { id = item.Id })' class="btn btn-primary">EDIT</a>
+                <a href='@Url.Action("Delete", "Delete",new { id = item.Id })' class="btn btn-danger">DELETE</a>
+            </td>
+        </tr>
+    }
+
+</table>

@@ -18,6 +18,7 @@ namespace DataModel
         public AcedemicYearMaster()
         {
             this.Students = new HashSet<Student>();
+            this.StudentAttendenceCounts = new HashSet<StudentAttendenceCount>();
         }
     
         public int Id { get; set; }
@@ -25,5 +26,7 @@ namespace DataModel
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Student> Students { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<StudentAttendenceCount> StudentAttendenceCounts { get; set; }
     }
 }
